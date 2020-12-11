@@ -15,7 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
-        statusItem.button?.title = "BOOM"
+        statusItem.button?.title = "📝"
         statusItem.button?.target = self
         statusItem.button?.action = #selector(showSettings)
     }

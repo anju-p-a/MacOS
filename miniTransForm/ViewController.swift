@@ -9,8 +9,7 @@
 import Cocoa
 
 class ViewController: NSViewController,NSTextFieldDelegate {
-
-   
+    
     @IBOutlet var input: NSTextField!
     @IBOutlet var type: NSSegmentedControl!
     @IBOutlet var output: NSTextField!
@@ -20,18 +19,20 @@ class ViewController: NSViewController,NSTextFieldDelegate {
         typeChanged(self);
         // Do any additional setup after loading the view.
     }
-
+ 
     override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.
         }
     }
 
- 
+   
+    
     @IBAction func typeChanged(_ sender: Any) {
+    
         switch(type.selectedSegment){
         case 0:
-            output.stringValue = rock13(input.stringValue)
+            output.stringValue = rot13(input.stringValue)
         case 1:
             output.stringValue = similar(input.stringValue)
         case 2:
@@ -42,16 +43,18 @@ class ViewController: NSViewController,NSTextFieldDelegate {
         }
     }
     
+  
     
     @IBAction func copyAction(_ sender: Any) {
         NSPasteboard.general.clearContents()
         NSPasteboard.general.setString(output.stringValue, forType:.string)
+        
     }
     
     func controlTextDidChange(_ obj:Notification){
         typeChanged(self)
     }
-    func rock13(_ input:String)->String {
+    func rot13(_ input:String)->String {
         //oyhr obl
         return ROT13.string(input)
     }
@@ -59,6 +62,9 @@ class ViewController: NSViewController,NSTextFieldDelegate {
     func similar(_ input:String)->String {
         var output = input //ª☯︎☓s☦︎f created result
         output = output.replacingOccurrences(of: "a", with: "ª")
+        output = output.replacingOccurrences(of: "e", with: "⍷")
+        output = output.replacingOccurrences(of: "i", with: "⏐")
+         output = output.replacingOccurrences(of: "u", with: "⍽")
         output = output.replacingOccurrences(of: "c", with: "☪︎")
          output = output.replacingOccurrences(of: "o", with: "☯︎")
          output = output.replacingOccurrences(of: "x", with: "☓")

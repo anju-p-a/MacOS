@@ -685,29 +685,11 @@
             <objects>
                 <viewController title="ViewController" storyboardIdentifier="viewControllermain" id="XfG-lQ-9wD" customClass="ViewController" customModule="miniTransForm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="589" height="307"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TRI-NA-xoA">
-                                <rect key="frame" x="58" y="98" width="365" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="nbc-c0-F0U">
-                                    <font key="font" metaFont="message"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PAb-bk-pw4">
-                                <rect key="frame" x="200" y="44" width="81" height="32"/>
-                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Zow-RZ-QL8">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="message"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="copyAction:" target="XfG-lQ-9wD" id="DBL-XR-Zcj"/>
-                                </connections>
-                            </button>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XbM-6z-wyo">
-                                <rect key="frame" x="76" y="228" width="328" height="22"/>
+                                <rect key="frame" x="76" y="265" width="437" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="D7a-cE-WN6">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -715,32 +697,50 @@
                                 </textFieldCell>
                             </textField>
                             <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="B2K-6z-WIp">
-                                <rect key="frame" x="44" y="162" width="416" height="23"/>
+                                <rect key="frame" x="151" y="207" width="288" height="23"/>
                                 <segmentedCell key="cell" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="texturedRounded" trackingMode="selectOne" id="fy8-gd-5fp">
-                                    <font key="font" metaFont="message"/>
+                                    <font key="font" metaFont="system"/>
                                     <segments>
-                                        <segment label="Label1" width="102" selected="YES"/>
-                                        <segment label="Label2" width="101" tag="1"/>
-                                        <segment label="Label3" width="101"/>
-                                        <segment label="Label4"/>
+                                        <segment label="ROT13" toolTip="encryps by ROT13" selected="YES"/>
+                                        <segment label="SIMILAR" tag="1"/>
+                                        <segment label="STRIKE"/>
+                                        <segment label="ZALGO"/>
                                     </segments>
+                                    <connections>
+                                        <action selector="typeChanged:" target="XfG-lQ-9wD" id="Wu1-gx-7Ez"/>
+                                    </connections>
                                 </segmentedCell>
-                                <connections>
-                                    <action selector="typeChanged:" target="XfG-lQ-9wD" id="Lmd-mG-XRe"/>
-                                </connections>
                             </segmentedControl>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PAb-bk-pw4">
+                                <rect key="frame" x="254" y="44" width="81" height="32"/>
+                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Zow-RZ-QL8">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="copyAction:" target="XfG-lQ-9wD" id="DBL-XR-Zcj"/>
+                                </connections>
+                            </button>
+                            <textField verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TRI-NA-xoA">
+                                <rect key="frame" x="76" y="117" width="437" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="nbc-c0-F0U">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="TRI-NA-xoA" firstAttribute="centerX" secondItem="PAb-bk-pw4" secondAttribute="centerX" id="5Y2-ju-ztZ"/>
-                            <constraint firstItem="TRI-NA-xoA" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="58" id="6Mj-AJ-faQ"/>
+                            <constraint firstItem="B2K-6z-WIp" firstAttribute="top" secondItem="XbM-6z-wyo" secondAttribute="bottom" constant="35" id="86j-Id-CsQ"/>
                             <constraint firstItem="XbM-6z-wyo" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="76" id="8PG-AU-pQY"/>
-                            <constraint firstItem="B2K-6z-WIp" firstAttribute="top" secondItem="XbM-6z-wyo" secondAttribute="bottom" constant="43" id="G4A-l0-T0Z"/>
-                            <constraint firstAttribute="trailing" secondItem="PAb-bk-pw4" secondAttribute="trailing" constant="205" id="GoS-hu-6Vv"/>
                             <constraint firstAttribute="bottom" secondItem="PAb-bk-pw4" secondAttribute="bottom" constant="51" id="J6T-t1-5CG"/>
+                            <constraint firstItem="XbM-6z-wyo" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Jek-Yt-Z4d"/>
+                            <constraint firstItem="PAb-bk-pw4" firstAttribute="top" secondItem="TRI-NA-xoA" secondAttribute="bottom" constant="45" id="WFX-F8-iVK"/>
+                            <constraint firstItem="B2K-6z-WIp" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="fir-Ww-VqC"/>
                             <constraint firstItem="XbM-6z-wyo" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="iS0-R5-0vz"/>
-                            <constraint firstAttribute="trailing" secondItem="B2K-6z-WIp" secondAttribute="trailing" constant="20" symbolic="YES" id="okk-Pa-dyz"/>
+                            <constraint firstItem="PAb-bk-pw4" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="m8b-Kk-QvJ"/>
                             <constraint firstAttribute="trailing" secondItem="XbM-6z-wyo" secondAttribute="trailing" constant="76" id="qYC-Vl-a01"/>
-                            <constraint firstItem="TRI-NA-xoA" firstAttribute="top" secondItem="B2K-6z-WIp" secondAttribute="bottom" constant="43" id="xVT-oX-gZx"/>
+                            <constraint firstItem="TRI-NA-xoA" firstAttribute="top" secondItem="B2K-6z-WIp" secondAttribute="bottom" constant="69" id="zeb-3p-OOS"/>
                         </constraints>
                     </view>
                     <connections>
@@ -751,7 +751,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-751" y="405"/>
+            <point key="canvasLocation" x="-805.5" y="568.5"/>
         </scene>
     </scenes>
 </document>
